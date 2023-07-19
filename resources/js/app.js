@@ -1,8 +1,9 @@
-import {createApp} from 'vue/dist/vue.esm-bundler.js';
-import Home from './components/Home.vue';
+// import {createApp} from 'vue/dist/vue.esm-bundler.js'; 
+import {createApp} from 'vue'; // instead of line 1 thanks to resolve:alias in vite.config.js
 
-const app = createApp({});
+import home from './home.vue'; // home component
+import '../css/app.css'; // import styles here instead of vite for efficiency
 
-app.component('home-component', Home);
-
-app.mount("#app");
+const app = createApp({})
+    .component('home-component', home)
+    .mount("#app");
